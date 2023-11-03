@@ -27,3 +27,40 @@
 .App-link {
   color: #61dafb;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #282c34;
+  align-items: center;
+  color: aliceblue;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links-item {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.nav-links-item:hover {
+  color: #61dafb;
+}
+
+.book {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  border: 1px solid gray;
+}
+
+.bookTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
