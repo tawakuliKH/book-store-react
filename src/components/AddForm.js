@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addBook } from '../redux/books/bookSlice';
@@ -7,19 +6,23 @@ const AddForm = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
+  const randomId = `Book-${Math.random()}`;
   const newBook = {
-    item_id: 'item4',
+    item_id: randomId,
     title,
     author: '',
     category,
   };
 
-  const submitForm = () => {
-    dispatch(addBook(newBook));
+  const submitForm = (e) => {
+    e.preventDefault();
+    if (newBook.title !== '') {
+      dispatch(addBook(newBook));
+    }
     setTitle('');
   };
   return (
-    <div className="book-form">
+    <form className="book-form" onSubmit={(e) => submitForm(e)}>
       <h3 className="add-book">Add New Book</h3>
       <input type="text" value={title} placeholder="Book Name" onChange={(e) => setTitle(e.target.value)} />
       <select name="cars" id="cars" onChange={(e) => setCategory(e.target.value)}>
@@ -33,7 +36,7 @@ const AddForm = () => {
       >
         Add Book
       </button>
-    </div>
+    </form>
   );
 };
 
