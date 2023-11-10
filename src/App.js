@@ -1,8 +1,7 @@
 import './App.css';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import BookList from './components/BookList';
+import BooksContainer from './components/pages.js/BooksContainer';
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<BookList />} />
+          <Route path="/" element={<BooksContainer />} />
         </Routes>
       </Router>
     </div>
