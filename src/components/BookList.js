@@ -2,7 +2,6 @@ import { useDispatch } from 'react-redux';
 import { removeBook, getBooks } from '../redux/books/actions';
 
 const BookList = ({
-  // eslint-disable-next-line react/prop-types
   id, title, author, category,
 }) => {
   const dispatch = useDispatch();
@@ -37,5 +36,12 @@ const BookList = ({
       </div>
     </div>
   );
+};
+
+BookList.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 export default BookList;
