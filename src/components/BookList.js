@@ -21,18 +21,46 @@ const BookList = ({
           <div className="action"> Action</div>
           <h3 className="title">{title}</h3>
           <h4 className="author">{author}</h4>
-          <h4 className="author">{category}</h4>
-          <div className="comments-action">
-            <button type="button" className="comment">Comment</button>
-            <button type="button" className="remove" onClick={() => { handleRemove(id); }}>Remove</button>
-            <button type="button" className="edit">Edit</button>
-          </div>
+          <h4 className="category">{category}</h4>
+          <ul className="actions">
+            <li>
+              <button type="button">Comments</button>
+            </li>
+            <div className="verticalDivider" />
+            <li>
+              <button type="button" onClick={() => handleRemove(id)}>Remove</button>
+            </li>
+            <div className="verticalDivider" />
+            <li>
+              <button type="button">Edit</button>
+            </li>
+          </ul>
         </div>
-        <div className="percentage"> 64% </div>
-        <div className="book-info">
-          <div className="chapter">Chapter</div>
-          <div className="book-chapter">Chapter 17</div>
-          <button type="button" className="update">Update Progress</button>
+        <div className="progressContainer">
+
+          <div className="progressInfo">
+
+            <div className="circularProgressContainer">
+              <div className="circularProgress" />
+            </div>
+            <div className="progressNumber">
+              <h4>64%</h4>
+              <p>Completed</p>
+            </div>
+
+          </div>
+
+          <div className="progressDivider" />
+          <div className="chapterInfo">
+            <div className="chapterCurrent">
+              <h4>CURRENT CHAPTER</h4>
+              <p>CHAPTER 1</p>
+            </div>
+            <div>
+              <button type="button" className="update">UPDATE PROGRESS</button>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

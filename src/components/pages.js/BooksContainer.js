@@ -36,6 +36,7 @@ const BooksContainer = () => {
 
       {bookList || error}
       <div className="bookContainer">
+        <div className="line" />
         <AddForm />
       </div>
 
