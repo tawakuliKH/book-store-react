@@ -13,17 +13,19 @@ const AddForm = () => {
   const submitForm = (e) => {
     e.preventDefault();
     setRandomId(`Book- ${Math.random()}`);
-    dispatch(addBook({
-      URL,
-      newBook: {
-        item_id: randomId,
-        title,
-        author,
-        category,
-      },
-    })).then(() => {
-      dispatch(getBooks(URL));
-    });
+    if (title !== '') {
+      dispatch(addBook({
+        URL,
+        newBook: {
+          item_id: randomId,
+          title,
+          author,
+          category,
+        },
+      })).then(() => {
+        dispatch(getBooks(URL));
+      });
+    }
 
     setTitle('');
     setAuthor('');
