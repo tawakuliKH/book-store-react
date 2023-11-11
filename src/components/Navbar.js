@@ -8,9 +8,9 @@ const Navbar = () => (
       <Link to="/" className="books">BOOKS</Link>
       <Link to="/Author" className="categories  ">CATEGORIES</Link>
     </div>
-    <button type="button" className="iconButton">
+    <div className="iconButton">
       <PersonIcon />
-    </button>
+    </div>
   </div>
 );
 export default Navbar;
