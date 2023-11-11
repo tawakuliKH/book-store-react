@@ -8,21 +8,23 @@ const AddForm = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('Book 1');
-  const randomId = `Book-${Math.round(Math.random()) * 2 - 1}`;
-  const newBook = {
-    item_id: randomId,
-    title,
-    author,
-    category,
-  };
+  const [randomId, setRandomId] = useState('');
 
   const submitForm = (e) => {
     e.preventDefault();
-    if (newBook.title !== '') {
-      dispatch(addBook({ URL, newBook })).then(() => {
-        dispatch(getBooks(URL));
-      });
-    }
+    setRandomId(`Book- ${Math.random()}`);
+    dispatch(addBook({
+      URL,
+      newBook: {
+        item_id: randomId,
+        title,
+        author,
+        category,
+      },
+    })).then(() => {
+      dispatch(getBooks(URL));
+    });
+
     setTitle('');
     setAuthor('');
   };
